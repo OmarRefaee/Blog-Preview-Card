@@ -1,0 +1,122 @@
+// use global stylesheet
+@use "./SCSS/_global.scss" as *;
+@use "./SCSS/_mixins.scss" as *;
+
+.attribution {
+    width: 100%;
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    a {
+        color: hsl(228, 45%, 44%);
+        font-size: inherit;
+    }
+}
+
+.main {
+    background-color: $white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 385px;
+    height: 522.5px;
+    $border-radius: 20px;
+    border-radius: $border-radius;
+    border: 1.5px solid $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 22.5px;
+    box-shadow: 8px 8px 0px $black;
+
+    @include breakpoint(mobile) {
+        width: 327.5px;
+        height: 500px;
+    }
+    @include breakpoint(xs) {
+        width: 90%;
+    }
+
+    img {
+        width: 100%;
+        border-radius: ($border-radius / 1.8);
+        object-fit: cover;
+        height: -webkit-fill-available;
+        @include breakpoint(mobile) {
+            height: 200px;
+        }
+    }
+
+    .learning {
+        color: $black;
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: -0.3px;
+        margin-top: 22.5px;
+        margin-bottom: 12.75px;
+        background-color: $yellow;
+        width: fit-content;
+        padding: 5.5px 12.5px;
+        border-radius: ($border-radius / 4);
+        @include breakpoint(mobile) {
+            font-size: 12.5px;
+            padding: 5.5px 12.5px;
+            margin: 0;
+        }
+    }
+
+    .date {
+        color: $black;
+        font-size: 14.5px;
+        font-weight: 600;
+        letter-spacing: -0.3px;
+        @include breakpoint(mobile) {
+            font-size: 12.5px;
+        }
+    }
+
+    .title {
+        color: $black;
+        font-size: 24.1px;
+        font-weight: 800;
+        margin: 17.5px 0;
+        @include breakpoint(mobile) {
+            font-size: 20.1px;
+            margin: 0;
+        }
+
+        &:hover {
+            color: $yellow;
+            cursor: pointer;
+        }
+    }
+
+    .description {
+        color: $grey;
+        line-height: 1.43;
+        letter-spacing: -0.3px;
+        margin-bottom: 22.5px;
+        font-size: 16.75px;
+        @include breakpoint(mobile) {
+            margin: 0;
+            font-size: 14.8px;
+        }
+    }
+
+    .author {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        img {
+            $size: 32px;
+            width: $size;
+            height: $size;
+            border-radius: 50%;
+        }
+    }
+}

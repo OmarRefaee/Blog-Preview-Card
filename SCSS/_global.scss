@@ -1,0 +1,40 @@
+// figtree font variable and italic font face
+@font-face {
+    font-family: "Figtree";
+    font-style: normal;
+    font-weight: 125 950;
+    font-display: swap;
+    src: url("/assets/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+}
+
+// adding the italic variation of figtree
+@font-face {
+    font-family: "Figtree";
+    font-style: italic;
+    font-weight: 125 950;
+    font-display: swap;
+    src: url("/assets/fonts/Figtree-Italic-VariableFont_wght.ttf")
+        format("truetype");
+}
+
+$white: hsl(0, 0%, 100%);
+$grey: hsl(0, 0%, 50%);
+$black: hsl(0, 0%, 7%);
+$yellow: hsl(47, 88%, 63%);
+
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Figtree, sans-serif;
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    height: 100vh;
+    background-color: $yellow;
+    overflow: hidden;
+}
